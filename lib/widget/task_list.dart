@@ -4,25 +4,22 @@ import 'package:statemangementinflutter/widget/tasltile.dart';
 
 import '../models/task_data.dart';
 
-class TaskList extends StatefulWidget {
-  @override
-  State<TaskList> createState() => _TaskListState();
-}
-
-class _TaskListState extends State<TaskList> {
+class TaskList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<TaskData>(builder: ((context, taskData, child) {
       return ListView.builder(
           itemCount: taskData.tasks.length,
           itemBuilder: ((context, index) {
+            final tasked = taskData.tasks[index];
             return ListTileee(
-              taskTitle: taskData.tasks[index].name!,
-              isChecked: taskData.tasks[index].isDone,
+              taskTitle: tasked.name!,
+              isChecked: tasked.isDone,
               checkedCallback: (chexkedState) {
-                setState(() {
-                  taskData.tasks[index].toogleDone();
-                });
+                taskData.updateTask(tasked);
+              },
+              longPress: () {
+                taskData.deleteTask(tasked);
               },
             );
           }));
