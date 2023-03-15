@@ -1,8 +1,27 @@
-# statemangementinflutter
 
-A new Flutter project.
+## Todo app
+## APP type
+this is tood app thatkeep records of you todo list
 
-## Getting Started
+
+## key featuare
+*add to do
+*checked to do 
+*longpress delete
+
+
+## Technic and technoogy
+flutter
+provider(to mange the state)
+
+
+## ui/ux
+
+
+## Site link
+host on github
+
+
 
 This project is a starting point for a Flutter application.
 
